@@ -77,13 +77,17 @@
     End Sub
 
     Public Sub NuevoGolLocal(minutos As UShort)
-        _golesLocal += 1
-        _minutosGolesLocales.Add(Now.Minute)
+        If _finalizado = False Then
+            _golesLocal += 1
+            _minutosGolesVisitantes.Add(minutos)
+        End If
     End Sub
 
     Public Sub NuevoGolVisitante(minutos As UShort)
-        _golesVisitantes += 1
-        _minutosGolesVisitantes.Add(Now.Minute)
+        If _finalizado = False Then
+            _golesVisitantes += 1
+            _minutosGolesVisitantes.Add(minutos)
+        End If
     End Sub
 
     Public Overrides Function ToString() As String
