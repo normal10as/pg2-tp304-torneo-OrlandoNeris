@@ -1,6 +1,6 @@
 ﻿Public Class Partido
 
-    Private _estado As Boolean
+    Private _finalizado As Boolean
 
     Private _equipoLocal As Equipo
     Public Property EquipoLocal As Equipo
@@ -64,7 +64,7 @@
         Me.Jornada = jornada
         Me.EquipoLocal = equipoLocal
         Me.EquipoVisitante = equipoVisitante
-        _estado = True
+        _finalizado = False
     End Sub
 
     Sub New(jornada As Byte, equipolocal As Equipo, equipovisitante As Equipo, goleslocal As Byte, golesvisitante As Byte)
@@ -73,7 +73,7 @@
         Me.EquipoVisitante = equipovisitante
         _golesLocal = goleslocal
         _golesVisitantes = golesvisitante
-        _estado = True
+        Finalizado()
     End Sub
 
     Public Sub NuevoGolLocal(minutos As UShort)
@@ -91,7 +91,7 @@
     End Function
 
     Public Sub Finalizado()
-        _estado = False
+        _finalizado = True
     End Sub
 
 End Class
