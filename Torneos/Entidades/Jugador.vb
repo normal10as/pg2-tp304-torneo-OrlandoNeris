@@ -1,6 +1,16 @@
 ﻿Public Class Jugador
     Inherits Persona
 
+    Private _equipo As Equipo
+    Public Property Equipo As Equipo
+        Get
+            Return _equipo
+        End Get
+        Friend Set(value As Equipo)
+            _equipo = value
+        End Set
+    End Property
+
     Private _numero As UShort
     Public Property Numero As UShort
         Get

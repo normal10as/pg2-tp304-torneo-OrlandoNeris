@@ -1,20 +1,20 @@
 ﻿Public MustInherit Class Persona
 
-    Private _fechaNac As Date
-    Public Property FechaNac As Date
+    Private _fechaNacimiento As Date
+    Public Property FechaNacimiento As Date
         Get
-            Return _fechaNac
+            Return _fechaNacimiento
         End Get
         Set(value As Date)
-            If calcularEdad() >= 16 Then
-                _fechaNac = value
+            If CalcularEdad(value) >= 16 Then
+                _fechaNacimiento = value
             End If
         End Set
     End Property
 
     Public ReadOnly Property Edad As UShort
         Get
-            Return calcularEdad()
+            Return CalcularEdad(FechaNacimiento)
         End Get
     End Property
 
@@ -32,15 +32,15 @@
 
     Sub New(nombre, fechanacimiento)
         Me.Nombre = nombre
-        FechaNac = fechanacimiento
+        Me.FechaNacimiento = fechanacimiento
     End Sub
 
     Public Overrides Function ToString() As String
         Return Nombre
     End Function
 
-    Public Function calcularEdad() As UShort
-        Return Now.Year - FechaNac.Year
+    Private Function CalcularEdad(fechanacimiento As Date) As UShort
+        Return Now.Year - fechanacimiento.Year
     End Function
 
 End Class

@@ -8,7 +8,9 @@
             Return _equipoLocal
         End Get
         Set(value As Equipo)
-            _equipoLocal = value
+            If Not _finalizado Then
+                _equipoLocal = value
+            End If
         End Set
     End Property
 
@@ -18,7 +20,9 @@
             Return _equipoVisitante
         End Get
         Set(value As Equipo)
-            _equipoVisitante = value
+            If Not _finalizado Then
+                _equipoVisitante = value
+            End If
         End Set
     End Property
 
@@ -28,7 +32,9 @@
             Return _jornada
         End Get
         Set(value As Byte)
-            _jornada = value
+            If Not _finalizado Then
+                _jornada = value
+            End If
         End Set
     End Property
 
@@ -68,12 +74,10 @@
     End Sub
 
     Sub New(jornada As Byte, equipolocal As Equipo, equipovisitante As Equipo, goleslocal As Byte, golesvisitante As Byte)
-        Me.Jornada = jornada
-        Me.EquipoLocal = equipolocal
-        Me.EquipoVisitante = equipovisitante
+        Me.New(jornada, equipolocal, equipovisitante)
+        Finalizado()
         _golesLocal = goleslocal
         _golesVisitantes = golesvisitante
-        Finalizado()
     End Sub
 
     Public Sub NuevoGolLocal(minutos As UShort)

@@ -1,5 +1,7 @@
 ﻿Public Class Equipo
 
+
+
     Private _nombre As String
     Public Property Nombre As String
         Get
@@ -23,17 +25,18 @@
     End Function
 
     Public Sub ComprarJugador(jugador As Jugador)
+        jugador.Equipo = Me
         _jugadores.Add(jugador)
     End Sub
 
-    Public Sub LiberarJugador(jugador)
+    Public Sub LiberarJugador(jugador As Jugador)
+        jugador.Equipo = Nothing
         _jugadores.Remove(jugador)
     End Sub
 
     Public Sub VenderJugador(jugador As Jugador, equipodestino As Equipo)
-
+        equipodestino.ComprarJugador(jugador)
         _jugadores.Remove(jugador)
-        equipodestino._jugadores.Add(jugador)
     End Sub
 
 End Class
