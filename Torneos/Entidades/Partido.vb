@@ -2,6 +2,16 @@
 
     Private _finalizado As Boolean
 
+    Private _refereePartido As Referee
+    Public Property RefereePartido As Referee
+        Get
+            Return _refereePartido
+        End Get
+        Set(value As Referee)
+            _refereePartido = value
+        End Set
+    End Property
+
     Private _equipoLocal As Equipo
     Public Property EquipoLocal As Equipo
         Get

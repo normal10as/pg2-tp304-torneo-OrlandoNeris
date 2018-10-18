@@ -1,7 +1,5 @@
 ﻿Public Class Equipo
 
-
-
     Private _nombre As String
     Public Property Nombre As String
         Get
