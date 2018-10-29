@@ -23,7 +23,7 @@
         End Set
     End Property
 
-    Sub New(nombre, fechanac, numero)
+    Sub New(nombre As String, fechanac As Date, numero As Byte)
         MyBase.New(nombre, fechanac)
         Me.Numero = numero
     End Sub

@@ -9,7 +9,7 @@ Module Jugador_Test
         Console.WriteLine()
         Console.WriteLine("Nombre: " & Jugador1.Nombre)
         Console.WriteLine("Numero: " & Jugador1.Numero)
-        Console.WriteLine("Fecha de Nacimiento: " & Jugador1.FechaNac)
+        Console.WriteLine("Fecha de Nacimiento: " & Jugador1.FechaNacimiento)
         Console.WriteLine("Edad: " & Jugador1.Edad)
         Console.WriteLine("ToString: " & Jugador1.ToString)
 

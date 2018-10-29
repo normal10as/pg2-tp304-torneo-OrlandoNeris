@@ -16,6 +16,7 @@
 
     Sub New(nombre As String)
         Me.Nombre = nombre
+        _jugadores = New List(Of Jugador)
     End Sub
 
     Public Overrides Function ToString() As String
@@ -36,5 +37,9 @@
         equipodestino.ComprarJugador(jugador)
         _jugadores.Remove(jugador)
     End Sub
+
+    Public Function getAllJugadores() As List(Of Jugador)
+        Return _jugadores
+    End Function
 
 End Class

@@ -8,7 +8,7 @@ Module Referee_Test
         Console.WriteLine()
         Console.WriteLine("Nombre: " & Referee1.Nombre)
         Console.WriteLine("Internacional: " & Referee1.Internacional)
-        Console.WriteLine("Fecha de Nacimiento: " & Referee1.FechaNac)
+        Console.WriteLine("Fecha de Nacimiento: " & Referee1.FechaNacimiento)
         Console.WriteLine("Edad: " & Referee1.Edad)
         Console.WriteLine("ToString: " & Referee1.ToString)
 

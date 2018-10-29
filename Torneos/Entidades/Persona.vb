@@ -30,7 +30,7 @@
         End Set
     End Property
 
-    Sub New(nombre, fechanacimiento)
+    Sub New(nombre As String, fechanacimiento As Date)
         Me.Nombre = nombre
         Me.FechaNacimiento = fechanacimiento
     End Sub
