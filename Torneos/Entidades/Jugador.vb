@@ -7,6 +7,9 @@
             Return _equipo
         End Get
         Friend Set(value As Equipo)
+            If _equipo IsNot Nothing AndAlso _equipo.Equals(value) Then
+                Throw New ArgumentException("El equipo es el mismo")
+            End If
             _equipo = value
         End Set
     End Property
@@ -17,9 +20,10 @@
             Return _numero
         End Get
         Set(value As UShort)
-            If value > 0 And value < 99 Then
-                _numero = value
+            If value = 0 Or value > 99 Then
+                Throw New ArgumentException("NUMERO FUERA DE RANGO")
             End If
+            _numero = value
         End Set
     End Property
 

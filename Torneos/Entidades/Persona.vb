@@ -24,9 +24,12 @@
             Return _nombre
         End Get
         Set(value As String)
-            If value.Length > 0 And value.Length <= 30 Then
-                _nombre = value
+            If value.Length = 0 Then
+                Throw New ArgumentException("Nombre no puede ser vacio")
+            ElseIf value.Length > 30 Then
+                Throw New ArgumentException("Nombre no puede superar los 30 caracteres")
             End If
+            _nombre = value
         End Set
     End Property
 

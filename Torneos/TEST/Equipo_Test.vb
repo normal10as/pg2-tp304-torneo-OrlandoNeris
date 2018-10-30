@@ -23,10 +23,22 @@ Module Equipo_Test
         Dim equipo2 As New Equipo("Las tacuaritas")
 
         Equipo1.VenderJugador(jugador2, equipo2)
+        Try
+            Equipo1.VenderJugador(jugador2, equipo2)
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
 
         MostrarJugadores(Equipo1)
         MostrarJugadores(equipo2)
 
+        Try
+            If jugador1.Equipo Is Nothing Then
+                Console.WriteLine("El jugador " & jugador1.Nombre & " no tiene equipo. ")
+            End If
+        Catch ex As Exception
+
+        End Try
 
         Console.ReadKey()
 
